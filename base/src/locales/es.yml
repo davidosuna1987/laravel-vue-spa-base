@@ -1,0 +1,16 @@
+forms:
+  email: Email
+  password: Contraseña
+  password_confirmation: Confirmar contraseña
+  submit: Enviar
+  name: Nombre
+  surnames: Apellidos
+  page_not_found: Página no encontrada
+auth:
+  remember: Recuérdame
+  forgot: ¿Has olvidado tu contraseña?
+  login: Login
+  logout: Logout
+  welcome: ¡Bienvenid{'@'} de nuevo!
+  register: Registrarme
+  reset: Restablecer contraseña

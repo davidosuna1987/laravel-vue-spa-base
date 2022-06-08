@@ -1,0 +1,16 @@
+forms:
+  email: Email
+  password: Password
+  page_not_found: Page not found
+  name: Name
+  password_confirmation: Confirm Password
+  submit: Submit
+  surnames: Surnames
+auth:
+  forgot: Have you forgotten your password?
+  login: Login
+  logout: Logout
+  register: Register
+  remember: Remember me
+  reset: Restore password
+  welcome: Welcome back!

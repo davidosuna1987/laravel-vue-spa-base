@@ -1,0 +1,178 @@
+html, body{
+  background-color: $background-color;
+  font-family: $font-primary;
+  font-size: $font-size;
+  font-weight: $font-weight;
+  color: $text-color;
+  line-height: 1.3;
+  user-select: none;
+}
+
+body{
+  // @include scrollbar();
+  // overflow-x: hidden;
+  // overflow-y: auto;
+  overflow: hidden;
+}
+
+#app{
+  position: relative;
+  height: 100vh;
+  z-index: 1;
+
+
+  display: grid;
+  grid-template-areas: 'navbar'
+                       'main'
+                       'footer';
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+
+  .app-navbar{
+    grid-area: navbar;
+  }
+
+  .app-main{
+    @include scrollbar();
+    grid-area: main;
+    overflow-y: auto;
+    padding: 1.5rem;
+
+    &__content{
+      padding: 20px 20px 100px;
+      background: white;
+      border-radius: 1rem;
+      min-height: 100%;
+      box-shadow: $box-shadow;
+    }
+  }
+
+  .app-footer{
+    grid-area: footer;
+    display: none;
+  }
+}
+
+h1, h2, h3, h4, h5, h6{
+  font-weight: 300;
+}
+
+h1, .is-size-1, .fz-1{ font-size: 34px }
+h2, .is-size-2, .fz-2{ font-size: 31px }
+h3, .is-size-3, .fz-3{ font-size: 23px }
+h4, .is-size-4, .fz-4{ font-size: $font-size-4 }
+h5, .is-size-5, .fz-5{ font-size: $font-size-5 }
+h6, .is-size-6, .fz-6, small{ font-size: $font-size-6 }
+.is-size-7, .fz-7{ font-size: $font-size-7 }
+
+@media(min-width:768px){
+  html, body{
+    font-size: $font-size;
+  }
+
+  h1, .is-size-1, .fz-1{ font-size: $font-size-1 }
+  h2, .is-size-2, .fz-2{ font-size: $font-size-2 }
+  h3, .is-size-3, .fz-3{ font-size: $font-size-3 }
+  h4, .is-size-4, .fz-4{ font-size: $font-size-4 }
+  h5, .is-size-5, .fz-5{ font-size: $font-size-5 }
+  h6, .is-size-6, .fz-6{ font-size: $font-size-6 }
+  .is-size-6, .fz-6{ font-size: $font-size-7 }
+}
+
+.fw-100{ font-weight: 100 }
+.fw-200{ font-weight: 200 }
+.fw-300{ font-weight: 300 }
+.fw-400{ font-weight: 400 }
+.fw-500{ font-weight: 500 }
+.fw-600{ font-weight: 600 }
+.fw-700{ font-weight: 700 }
+.fw-800{ font-weight: 800 }
+.fw-900{ font-weight: 900 }
+
+.has-text-success{ color: $success-color !important }
+.has-text-danger{ color: $danger-color !important }
+.has-text-warning{ color: $warning-color !important }
+.has-text-info{ color: $info-color !important }
+.has-text-purple{ color: $purple-color !important }
+.has-text-gray{ color: $gray-color !important }
+.has-text-light{ color: $text-color-light !important }
+.has-text-lighter{ color: $text-color-lighter !important }
+.has-text-dark{ color: $text-color-dark !important }
+.has-text-white{ color: white !important }
+
+strong{
+  font-weight: 700;
+}
+
+.tac, .ta-c, .text-align-center, .has-text-centered{
+  text-align: center;
+}
+
+.container{
+  @extend %container;
+}
+
+.text-gradient{
+  @include textGradient();
+}
+
+.icon-white{
+  filter: brightness(0) invert(1);
+}
+
+::placeholder{
+  color: $text-color-dark;
+}
+
+.is-blurred{
+  filter: blur(5px)
+}
+
+.tin-input-container{
+  &.is-loading{
+    position: relative;
+    pointer-events: none;
+    opacity: 0.3;
+
+    input{
+      &::placeholder{
+        color: transparent !important;
+      }
+    }
+
+    .tin-input-spinner{
+      animation: spin 500ms infinite linear;
+      border: 2px solid #dbdbdb;
+      border-radius: 290486px;
+      border-right-color: transparent;
+      border-top-color: transparent;
+      display: block;
+      height: 0.7em;
+      width: 0.7em;
+      left: calc(50% - (0.7em / 2));
+      top: calc(50% - (0.7em / 2));
+      position: absolute !important;
+    }
+  }
+}
+
+.tin-spinner{
+  position: relative;
+  width: 100%;
+  pointer-events: none;
+
+  &:after{
+    animation: spin 500ms infinite linear;
+    border: 2px solid $text-color-light;
+    border-radius: 290486px;
+    border-right-color: transparent;
+    border-top-color: transparent;
+    content: "";
+    display: block;
+    height: 1em;
+    width: 1em;
+    left: calc(50% - (1em / 2));
+    top: calc(50% - (1em / 2));
+    position: absolute !important;
+  }
+}

@@ -1,0 +1,22 @@
+.app-navbar{
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  padding: 0 2rem;
+  height: 4rem;
+  box-shadow: $box-shadow;
+  z-index: 1;
+  background-color: white;
+
+  &__item{
+    margin: 0 6px;
+    padding: 0 1rem;
+  }
+
+  &__button{
+    padding: 0 12px;
+    border: solid 1px $background-color;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+}
